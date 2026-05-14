@@ -14,7 +14,7 @@ export default function Index({ navigation }: Props) {
     console.log("User digitado:", user);
     console.log("Senha digitada:", senha);
     if (user === 'Laura' && senha === '777') {
-      navigation.navigate('Dashboard', {
+      navigation.navigate('Tabs', {
         userId: 'ID-' + Math.random().toString(),
         userName: user
       });

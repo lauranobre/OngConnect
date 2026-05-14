@@ -8,7 +8,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Dashboard'>;
 export default function HomeScreen({ route, navigation }: Props) {
     const { userName, userId } = route.params;
 
-        return (
+    return (
         <View style={styles.body}>
             <View style={styles.container}>
 
@@ -21,7 +21,7 @@ export default function HomeScreen({ route, navigation }: Props) {
                     {/* TOPO */}
                     <Text style={styles.tituloPrincipal}>Dashboard</Text>
                     <Text style={styles.textoComum}>
-                        Bem-vindo de volta, {userName} 
+                        Bem-vindo de volta, {userName}
                     </Text>
 
                     {/* CARD DE INFORMAÇÕES */}
@@ -31,6 +31,30 @@ export default function HomeScreen({ route, navigation }: Props) {
 
                         <Text style={styles.label}>ID do usuário</Text>
                         <Text style={styles.info}>{userId}</Text>
+                    </View>
+
+                    {/* CARDS DE RESUMOS - INVENÇÃO */}
+                    <View style={styles.cardsContainer}>
+
+                        <View style={styles.resumoCard}>
+                            <Text style={styles.cardTitulo}>ONGs disponíveis</Text>
+                            <Text style={styles.cardNumero}>12</Text>
+                        </View>
+
+                        <View style={styles.resumoCard}>
+                            <Text style={styles.cardTitulo}>Causas favoritas</Text>
+                            <Text style={styles.cardTexto}>
+                                Educação e Meio Ambiente
+                            </Text>
+                        </View>
+
+                        <View style={styles.resumoCard}>
+                            <Text style={styles.cardTitulo}>Impacto</Text>
+                            <Text style={styles.cardTexto}>
+                                3 ações voluntárias realizadas
+                            </Text>
+                        </View>
+
                     </View>
 
                     {/* AÇÕES */}
@@ -138,4 +162,46 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+
+    // INVENÇÃO DOS CARDS DE RESUMO:
+    cardsContainer: {
+    width: '100%',
+    gap: 15,
+    marginBottom: 25,
+},
+
+resumoCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 18,
+    padding: 20,
+
+    shadowColor: '#000',
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+
+    elevation: 4,
+},
+
+cardTitulo: {
+    fontSize: 16,
+    color: '#64748B',
+    marginBottom: 8,
+},
+
+cardNumero: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#005CFF',
+},
+
+cardTexto: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#1E293B',
+},
 });
